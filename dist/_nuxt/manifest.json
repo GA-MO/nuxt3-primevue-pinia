@@ -1,0 +1,56 @@
+{
+  "node_modules/nuxt/dist/app/entry.mjs": {
+    "file": "entry-c403dd88.mjs",
+    "src": "node_modules/nuxt/dist/app/entry.mjs",
+    "isEntry": true,
+    "dynamicImports": [
+      "pages/index.vue",
+      "layouts/default.vue",
+      "layouts/empty.vue"
+    ],
+    "css": [
+      "entry.912faef9.css"
+    ],
+    "assets": [
+      "PSLKandaModernPro.718287a8.eot",
+      "PSLKandaModernPro.2c05e44c.woff2",
+      "PSLKandaModernPro.099998fd.woff",
+      "PSLKandaModernPro.e9a7186e.ttf",
+      "PSLKandaModernPro.1a733369.svg",
+      "PSLKandaModernExtraPro.5623b211.eot",
+      "PSLKandaModernExtraPro.f10dbab3.woff2",
+      "PSLKandaModernExtraPro.d686e382.woff",
+      "PSLKandaModernExtraPro.5029ac72.ttf",
+      "PSLKandaModernExtraPro.bba4f53b.svg",
+      "color.473bc8ca.png",
+      "primeicons.c9eaf535.eot",
+      "primeicons.788dba0a.ttf",
+      "primeicons.feb68bf6.woff",
+      "primeicons.2ab98f70.svg"
+    ]
+  },
+  "pages/index.vue": {
+    "file": "index-62f55962.mjs",
+    "src": "pages/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/default.vue": {
+    "file": "default-cfa195e9.mjs",
+    "src": "layouts/default.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  },
+  "layouts/empty.vue": {
+    "file": "empty-451fb539.mjs",
+    "src": "layouts/empty.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "node_modules/nuxt/dist/app/entry.mjs"
+    ]
+  }
+}

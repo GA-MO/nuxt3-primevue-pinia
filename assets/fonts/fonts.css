@@ -1,0 +1,24 @@
+
+@font-face {
+  font-family: 'PSLKandaModernPro';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./PSLKandaModernPro.eot');
+  src: url('./PSLKandaModernPro.eot') format('embedded-opentype'),
+       url('./PSLKandaModernPro.woff2') format('woff2'),
+       url('./PSLKandaModernPro.woff') format('woff'),
+       url('./PSLKandaModernPro.ttf') format('truetype'),
+       url('./PSLKandaModernPro.svg#PSLKandaModernPro') format('svg');
+}
+
+@font-face {
+  font-family: 'PSLKandaModernExtraPro';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./PSLKandaModernExtraPro.eot');
+  src: url('./PSLKandaModernExtraPro.eot') format('embedded-opentype'),
+       url('./PSLKandaModernExtraPro.woff2') format('woff2'),
+       url('./PSLKandaModernExtraPro.woff') format('woff'),
+       url('./PSLKandaModernExtraPro.ttf') format('truetype'),
+       url('./PSLKandaModernExtraPro.svg#PSLKandaModernExtraPro') format('svg');
+}
