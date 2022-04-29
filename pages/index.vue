@@ -52,7 +52,6 @@ function handleClickClearNews() {
 .page {
   padding: 40px;
   min-height: 100vh;
-  background: #f1f1f1;
   text-align: center;
 }
 

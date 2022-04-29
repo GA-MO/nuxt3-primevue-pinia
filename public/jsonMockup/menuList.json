@@ -1,0 +1,30 @@
+{
+  "data": [
+    {
+      "label": "Dashboard",
+      "icon": "pi pi-home",
+      "to": "/"
+    },
+    {
+      "label": "Report",
+      "to": "/report"
+    },
+    {
+      "label": "Google",
+      "to": "https://google.com"
+    },
+    {
+      "label": "Account",
+      "items": [
+        {
+          "label": "Profile",
+          "to": "/profile"
+        },
+        {
+          "label": "Address",
+          "to": "/address"
+        }
+      ]
+    }
+  ]
+}

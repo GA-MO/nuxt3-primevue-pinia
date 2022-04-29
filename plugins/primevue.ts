@@ -7,6 +7,7 @@ import Calendar from 'primevue/calendar'
 import Dialog from 'primevue/dialog'
 import Card from 'primevue/card'
 import Skeleton from 'primevue/skeleton'
+import Menu from 'primevue/menu'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue, { ripple: true })
@@ -17,5 +18,6 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('Calendar', Calendar)
   nuxtApp.vueApp.component('Card', Card)
   nuxtApp.vueApp.component('Skeleton', Skeleton)
+  nuxtApp.vueApp.component('Menu', Menu)
   //other components that you need
 })
