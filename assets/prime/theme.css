@@ -8,6 +8,7 @@
   --surface-f:#ffffff;
   --text-color:#495057;
   --text-color-secondary:#6c757d;
+  --background-color:#f1f1f1;
   --primary-color:#f37021;
   --primary-hover-color:#DE661E;
   --primary-active-color:#DE661E;
@@ -71,6 +72,7 @@ body {
   font-size: var(--font-size);
   font-weight: normal;
   line-height: 1;
+  background: var(--background-color);
 }
 
 
@@ -1703,6 +1705,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   font-size: var(--font-size);
   transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
   border-radius: var(--border-radius);
+  justify-content: center;
 }
 .p-button:enabled:hover {
   background: var(--primary-hover-color);
@@ -5654,6 +5657,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
 
 .p-button-label {
   font-weight: 700;
+  flex: none !important;
 }
 
 .p-accordion .p-accordion-header .p-accordion-header-link {
