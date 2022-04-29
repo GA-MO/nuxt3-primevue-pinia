@@ -13,6 +13,7 @@
     />
 
     <Button label="Clear" @click="handleClickClearNews" />
+    <Button label="Logout" @click="handleClickLogout" />
 
     <div class="news-list">
       <div
@@ -32,7 +33,12 @@
 <script lang="ts" setup>
 import { useNewsStore, fetchNews, fetchNewsError } from '../modules/news'
 
+definePageMeta({
+  middleware: ['auth'],
+})
+
 const newsStore = useNewsStore()
+const auth = useAuth()
 const wait = useWait()
 
 function handleClickGetNews() {
@@ -45,6 +51,10 @@ function handleClickGetNewsError() {
 
 function handleClickClearNews() {
   newsStore.newsList = []
+}
+
+function handleClickLogout() {
+  auth.logout()
 }
 </script>
 
