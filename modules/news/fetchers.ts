@@ -3,22 +3,22 @@ import createFetcher from '../../utils/createFetcher'
 import { AxiosResponse } from 'axios'
 import { NewsItem } from './models'
 
-const mock = false
-const delay = 2
+const isMock: boolean = false
+const delay: number = 2
 
 async function fetchNews() {
   const newsStore = useNewsStore()
   const newsFetcher = createFetcher({
     url: 'https://jsonplaceholder.typicode.com/posts',
     jsonMockup: '/jsonMockup/news.json',
-    mock,
+    mock: isMock,
     delay,
   })
 
   const response: AxiosResponse = await newsFetcher
 
   const newsList = response.data.map(
-    (item): NewsItem => ({
+    (item: any): NewsItem => ({
       userId: item.useId,
       id: item.id,
       title: item.title,
@@ -38,7 +38,7 @@ async function fetchNewsError() {
 
     await newErrorFetcher
   } catch (err) {
-    console.log('dgamgoagag', err)
+    console.log('ErrorMessage', err)
   }
 }
 

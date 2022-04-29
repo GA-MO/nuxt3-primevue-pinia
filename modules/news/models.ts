@@ -1,10 +1,10 @@
-export type NewsItem = {
+export interface NewsItem {
   userId: number
   id: number
   title: string
   body: string
 }
 
-export type NewsState = {
+export interface NewsState {
   newsList: NewsItem[]
 }

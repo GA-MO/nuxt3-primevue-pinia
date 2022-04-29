@@ -1,12 +1,22 @@
-export default function () {
-  const state = ref<Array<string>>([])
+interface WaitFeatures {
+  is: Function
+  any: Function
+  start: Function
+}
 
-  const is = (key: string) => {
+function useWait(): WaitFeatures {
+  const state = ref<string[]>([])
+
+  function is(key: string): boolean {
     const isLoading = (loadingKey: string) => loadingKey === key
     return state.value.some(isLoading)
   }
 
-  const start = async (key: string, func: Function) => {
+  function any(): boolean {
+    return state.value.length !== 0
+  }
+
+  async function start(key: string, func: Function) {
     try {
       state.value.push(key)
       await func()
@@ -18,6 +28,9 @@ export default function () {
 
   return {
     is,
+    any,
     start,
   }
 }
+
+export default useWait

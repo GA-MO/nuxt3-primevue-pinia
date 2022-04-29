@@ -1,22 +1,24 @@
 import { defineNuxtPlugin } from '#app'
 import axios, { AxiosResponse } from 'axios'
 
-function isServiceError(response: AxiosResponse) {
+function isServiceError(response: AxiosResponse): boolean {
   // if (response.data?.error) return true
   return false
 }
 
-function getErrorMessage(response: AxiosResponse) {
+function getErrorMessage(response: AxiosResponse): string {
   return 'Service Error'
 }
 
 export default defineNuxtPlugin(() => {
-  axios.interceptors.response.use(function (response): AxiosResponse {
+  function success(response: AxiosResponse): AxiosResponse {
     if (isServiceError(response)) {
       throw Object({
         message: getErrorMessage(response),
       })
     }
     return response
-  })
+  }
+
+  axios.interceptors.response.use(success)
 })

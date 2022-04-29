@@ -1,3 +1,3 @@
-export type Demo = {
+export interface Demo {
   name: string
 }

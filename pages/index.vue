@@ -32,9 +32,6 @@
 <script lang="ts" setup>
 import { useNewsStore, fetchNews, fetchNewsError } from '../modules/news'
 
-const config = useRuntimeConfig()
-console.log('Runtime public config :', config.public)
-
 const newsStore = useNewsStore()
 const wait = useWait()
 

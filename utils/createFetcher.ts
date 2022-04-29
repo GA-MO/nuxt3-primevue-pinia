@@ -1,11 +1,7 @@
-import axios, {
-  AxiosPromise,
-  AxiosRequestHeaders,
-  AxiosRequestConfig,
-} from 'axios'
+import axios, { AxiosPromise, AxiosRequestConfig } from 'axios'
 import AlertProgrammatic from '../components/AlertProgrammatic'
 
-type FetcherOptions = {
+interface FetcherOptions {
   mock?: boolean
   jsonMockup?: string
   delay?: number
@@ -20,7 +16,7 @@ const defaultOptions: AxiosRequestConfig & FetcherOptions = {
 
 function createFetcher(options = defaultOptions): AxiosPromise {
   return new Promise((resolve, reject) => {
-    const callFetch = async () => {
+    async function callFetch() {
       try {
         if (options.mock) {
           const response = await axios.get(options.jsonMockup)
