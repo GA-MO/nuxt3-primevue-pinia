@@ -14,7 +14,12 @@
       />
     </div>
     <div class="footer p-fluid">
-      <Button label="Logout" icon="pi pi-sign-out" class="button-logout" />
+      <Button
+        label="Logout"
+        icon="pi pi-sign-out"
+        class="button-logout"
+        @click="handleClickLogout"
+      />
     </div>
   </div>
 </template>
@@ -27,8 +32,14 @@ defineProps({
   },
 })
 
+const auth = useAuth()
+
 function handleClickLogo() {
   navigateTo('/')
+}
+
+function handleClickLogout() {
+  auth.logout()
 }
 </script>
 
@@ -65,7 +76,7 @@ function handleClickLogo() {
 }
 
 .button-logout {
-  background: #1d1d1d !important;
+  background: #2a2a2a !important;
   border: none;
 }
 </style>

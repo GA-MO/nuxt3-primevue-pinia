@@ -32,6 +32,10 @@
 <script lang="ts" setup>
 import { useNewsStore, fetchNews, fetchNewsError } from '../modules/news'
 
+definePageMeta({
+  middleware: ['auth'],
+})
+
 const newsStore = useNewsStore()
 const wait = useWait()
 

@@ -4,11 +4,12 @@ import axios, { AxiosError, AxiosResponse } from 'axios'
 import AlertProgrammatic from '../components/AlertProgrammatic'
 
 function isServiceError(response: AxiosResponse): boolean {
-  // if (response.data?.error) return true
+  if (response.data.error) return true
   return false
 }
 
 function getErrorMessage(response: AxiosResponse): string {
+  if (response.data.message) return response.data.message
   return 'Service Error'
 }
 
@@ -30,11 +31,11 @@ function success(response: AxiosResponse): AxiosResponse {
   return response
 }
 
-function error(error: AxiosError) {
+function error(error) {
   AlertProgrammatic({
     type: 'error',
     title: error?.response?.statusText || 'Error',
-    content: error.message,
+    content: error?.response?.data?.message || error.message,
   })
 
   return Promise.reject(error)
