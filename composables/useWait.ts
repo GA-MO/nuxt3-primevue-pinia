@@ -2,10 +2,11 @@ interface WaitFeatures {
   is: Function
   any: Function
   start: Function
+  end: Function
 }
 
 function useWait(): WaitFeatures {
-  const state = ref<string[]>([])
+  const state = ref([])
 
   function is(key: string): boolean {
     const isLoading = (loadingKey: string) => loadingKey === key
@@ -16,13 +17,17 @@ function useWait(): WaitFeatures {
     return state.value.length !== 0
   }
 
+  function end(key: string) {
+    const removeLoading = (loadingKey: string) => loadingKey !== key
+    state.value = state.value.filter(removeLoading)
+  }
+
   async function start(key: string, func: Function) {
     try {
       state.value.push(key)
       await func()
     } finally {
-      const removeLoading = (loadingKey: string) => loadingKey !== key
-      state.value = state.value.filter(removeLoading)
+      end(key)
     }
   }
 
@@ -30,6 +35,7 @@ function useWait(): WaitFeatures {
     is,
     any,
     start,
+    end,
   }
 }
 

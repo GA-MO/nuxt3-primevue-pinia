@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     API_SECRET: '',
     public: {
       API_BASE: '',
+      TOKEN_KEY: '',
     },
   },
   buildModules: ['@pinia/nuxt'],

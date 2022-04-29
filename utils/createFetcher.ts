@@ -26,12 +26,6 @@ function createFetcher(options = defaultOptions): AxiosPromise {
         const response = await axios(options)
         resolve(response)
       } catch (error) {
-        AlertProgrammatic({
-          type: 'error',
-          title: error?.response?.statusText || 'Error',
-          content: error.message,
-        })
-
         reject(error)
       }
     }
