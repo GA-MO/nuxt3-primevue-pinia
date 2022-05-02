@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { NewsState } from './models'
+import actions from './actions'
 
 export const useNewsStore = defineStore('news', {
   state: function (): NewsState {
@@ -7,4 +8,5 @@ export const useNewsStore = defineStore('news', {
       newsList: [],
     }
   },
+  actions,
 })
