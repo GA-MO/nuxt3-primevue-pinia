@@ -54,7 +54,6 @@ function handleClickClearNews() {
 
 <style lang="scss" scoped>
 .page {
-  padding: 40px;
   min-height: 100vh;
   text-align: center;
 }
