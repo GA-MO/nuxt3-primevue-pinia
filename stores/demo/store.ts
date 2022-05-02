@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import actions from './actions'
 
 // useStore could be anything like useUser, useCart
 // the first argument is a unique id of the store across your application
@@ -11,4 +12,5 @@ export const useAppData = defineStore('appData', {
       isAdmin: true,
     }
   },
+  actions,
 })

@@ -3,13 +3,13 @@
     <Button
       label="Get News"
       @click="handleClickGetNews"
-      :loading="wait.is('fetchNews')"
+      :loading="wait.is('getNews')"
     />
 
     <Button
       label="Get News Error"
       @click="handleClickGetNewsError"
-      :loading="wait.is('fetchNewsError')"
+      :loading="wait.is('getNewsError')"
     />
 
     <Button label="Clear" @click="handleClickClearNews" />
@@ -30,17 +30,17 @@
 </template>
 
 <script lang="ts" setup>
-import { useNewsStore, fetchNews, fetchNewsError } from '../modules/news'
+import { useNewsStore } from '../stores/news'
 
 const newsStore = useNewsStore()
 const wait = useWait()
 
 function handleClickGetNews() {
-  wait.start('fetchNews', fetchNews)
+  wait.start('getNews', newsStore.getNews)
 }
 
 function handleClickGetNewsError() {
-  wait.start('fetchNewsError', fetchNewsError)
+  wait.start('getNewsError', newsStore.getNewsError)
 }
 
 function handleClickClearNews() {
