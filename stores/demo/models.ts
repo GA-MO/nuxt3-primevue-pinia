@@ -1,3 +1,3 @@
-export interface Demo {
+export interface DemoState {
   name: string
 }
