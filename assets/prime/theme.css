@@ -1858,7 +1858,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border-color: var(--secondary-color);
 }
 .p-button.p-button-secondary:enabled:focus, .p-buttonset.p-button-secondary > .p-button:enabled:focus, .p-splitbutton.p-button-secondary > .p-button:enabled:focus {
-  box-shadow: 0 0 0 0.2rem #E2E8F0;
+  box-shadow: 0 0 0 0.2rem var(--secondary-color-active);
 }
 .p-button.p-button-secondary:enabled:active, .p-buttonset.p-button-secondary > .p-button:enabled:active, .p-splitbutton.p-button-secondary > .p-button:enabled:active {
   background: var(--secondary-color);
