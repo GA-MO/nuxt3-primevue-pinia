@@ -9,6 +9,7 @@ function isServiceError(response: AxiosResponse): boolean {
 }
 
 function getErrorMessage(response: AxiosResponse): string {
+  // if (response.data?.message) return response.data?.message
   return 'Service Error'
 }
 
