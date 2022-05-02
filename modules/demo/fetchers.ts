@@ -1,3 +1,0 @@
-function someFunction() {}
-
-export { someFunction }

@@ -10,7 +10,6 @@ export default defineNuxtConfig({
       TOKEN_KEY: '',
     },
   },
-  buildModules: ['@pinia/nuxt'],
   build: {
     transpile: ['primevue'],
   },
