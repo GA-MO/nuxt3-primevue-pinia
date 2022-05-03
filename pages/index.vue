@@ -66,8 +66,8 @@ function handleClickLogout() {
   text-align: center;
 }
 
-.p-button {
-  margin: 5px;
+.p-button + .p-button {
+  margin-left: 5px;
 }
 
 .news-list {
@@ -86,6 +86,3 @@ function handleClickLogout() {
   }
 }
 </style>
-
-function useDemoState() { throw new Error('Function not implemented.') }
-function useDemoState() { throw new Error('Function not implemented.') }
