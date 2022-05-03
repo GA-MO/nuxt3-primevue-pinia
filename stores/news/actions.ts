@@ -8,14 +8,14 @@ const delay: number = 2
 
 async function getNews() {
   const newsStore = useNewsStore()
-  const newsFetcher = createFetcher({
+  const fetchNews = createFetcher({
     url: 'https://jsonplaceholder.typicode.com/posts',
     jsonMockup: '/jsonMockup/news.json',
     mock: isMock,
     delay,
   })
 
-  const response: AxiosResponse = await newsFetcher
+  const response: AxiosResponse = await fetchNews
 
   const newsList = response.data.map(
     (item: any): NewsItem => ({
@@ -30,12 +30,12 @@ async function getNews() {
 }
 
 async function getNewsError() {
-  const newsErrorFetcher = createFetcher({
+  const fetchNewsError = createFetcher({
     url: 'https://jsonplaceholder.typicode.com/test',
     delay,
   })
 
-  await newsErrorFetcher
+  await fetchNewsError
 }
 
 export default { getNews, getNewsError }

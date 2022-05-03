@@ -76,3 +76,6 @@ function handleClickClearNews() {
   }
 }
 </style>
+
+function useDemoState() { throw new Error('Function not implemented.') }
+function useDemoState() { throw new Error('Function not implemented.') }
