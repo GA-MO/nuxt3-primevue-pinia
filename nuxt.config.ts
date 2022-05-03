@@ -15,10 +15,10 @@ export default defineNuxtConfig({
   },
   css: [
     'normalize.css/normalize.css',
+    'primevue/resources/primevue.css',
+    'primeicons/primeicons.css',
     'assets/fonts/fonts.css',
     'assets/prime/main.scss',
     'assets/prime/theme.css',
-    'primevue/resources/primevue.css',
-    'primeicons/primeicons.css',
   ],
 })
