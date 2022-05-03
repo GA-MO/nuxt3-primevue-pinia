@@ -25,6 +25,14 @@
   --danger-color:#d8371a;
   --danger-hover-color:#d8371a;
   --danger-active-color:#d8371a;
+  --tag-success-color:#E2FFE7;
+  --tag-success-text-color:#0BAD90;
+  --tag-info-color:#F4F9FF;
+  --tag-info-text-color:#4994FF;
+  --tag-warning-color:#FFF2D8;
+  --tag-warning-text-color:#FDAF43;
+  --tag-danger-color:#FFDED8;
+  --tag-danger-text-color:#D8371A;
   --font-family: "PSLKandaModernPro", sans-serif;
   --font-size:20px;
   --icon-size:14px;
@@ -75,10 +83,8 @@ body {
   background: var(--background-color);
 }
 
-
-h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
-  font-family: "PSLKandaModernExtraPro", sans-serif;
-  font-weight: normal;
+h1, h2, h3, h4, h5, h6, .text-bold {
+  font-weight: bold;
 }
 
 .text-danger {
@@ -351,7 +357,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: var(--content-padding);
   color: #343a40;
   background: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .p-calendar.p-invalid.p-component > .p-inputtext {
@@ -857,7 +863,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: var(--content-padding);
   color: #343a40;
   background: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-dropdown-panel .p-dropdown-items .p-dropdown-empty-message {
   padding: var(--content-padding);
@@ -1236,7 +1242,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: var(--content-padding);
   color: #343a40;
   background: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-listbox .p-listbox-list .p-listbox-empty-message {
   padding: var(--content-padding);
@@ -1377,7 +1383,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: var(--content-padding);
   color: #343a40;
   background: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-multiselect-panel .p-multiselect-items .p-multiselect-empty-message {
   padding: var(--content-padding);
@@ -2540,7 +2546,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   border-width: 1px 0 1px 0;
   padding: 1rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-datatable .p-datatable-footer {
   background: #f8f9fa;
@@ -2548,14 +2554,14 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-datatable .p-datatable-thead > tr > th {
   text-align: left;
   padding: 1rem 1rem;
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
-  font-weight: 700;
+  font-weight: bold;
   color: #343a40;
   background: #f8f9fa;
   transition: box-shadow 0.2s;
@@ -2565,7 +2571,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: 1rem 1rem;
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
-  font-weight: 700;
+  font-weight: bold;
   color: #343a40;
   background: #f8f9fa;
 }
@@ -2650,7 +2656,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   margin-right: 0.5rem;
 }
 .p-datatable .p-datatable-tbody > tr > td > .p-column-title {
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-datatable .p-datatable-tbody > tr:focus {
   outline: 0.15rem solid var(--secondary-color);
@@ -2775,7 +2781,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   border-width: 1px 0 1px 0;
   padding: 1rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-dataview .p-dataview-content {
   background: #ffffff;
@@ -2793,7 +2799,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
@@ -3217,7 +3223,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   color: #343a40;
   border: 1px solid #dee2e6;
   padding: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
   border-bottom: 0 none;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
@@ -3390,7 +3396,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   color: #343a40;
   border: 1px solid #dee2e6;
   padding: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
   border-bottom: 0 none;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
@@ -3554,7 +3560,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   border-width: 1px 0 1px 0;
   padding: 1rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-treetable .p-treetable-footer {
   background: #f8f9fa;
@@ -3562,14 +3568,14 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-treetable .p-treetable-thead > tr > th {
   text-align: left;
   padding: 1rem 1rem;
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
-  font-weight: 700;
+  font-weight: bold;
   color: #343a40;
   background: #f8f9fa;
   transition: box-shadow 0.2s;
@@ -3579,7 +3585,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: 1rem 1rem;
   border: 1px solid #dee2e6;
   border-width: 0 0 1px 0;
-  font-weight: 700;
+  font-weight: bold;
   color: #343a40;
   background: #f8f9fa;
 }
@@ -3738,7 +3744,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   color: #6c757d;
   background: #f8f9fa;
-  font-weight: 700;
+  font-weight: bold;
   border-radius: var(--border-radius);
   transition: box-shadow 0.2s;
 }
@@ -3793,7 +3799,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
 }
 .p-card .p-card-title {
   font-size: 1.5rem;
-  /* font-weight: 700; */
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 .p-card .p-card-subtitle {
@@ -3819,7 +3825,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   color: #343a40;
   background: #f8f9fa;
-  font-weight: 700;
+  font-weight: bold;
   border-radius: var(--border-radius);
 }
 .p-fieldset.p-fieldset-toggleable .p-fieldset-legend {
@@ -3885,7 +3891,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border-top-left-radius: var(--border-radius);
 }
 .p-panel .p-panel-header .p-panel-title {
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-panel .p-panel-header .p-panel-header-icon {
   width: 2rem;
@@ -3963,7 +3969,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   background: #ffffff;
   color: #6c757d;
   padding: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
   transition: box-shadow 0.2s;
@@ -4073,7 +4079,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border-top-left-radius: var(--border-radius);
 }
 .p-dialog .p-dialog-header .p-dialog-title {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.25rem;
 }
 .p-dialog .p-dialog-header .p-dialog-header-icon {
@@ -4532,7 +4538,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: var(--content-padding);
   color: #343a40;
   background: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
 }
@@ -4610,7 +4616,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   padding: var(--content-padding);
   color: #343a40;
   background: #ffffff;
-  font-weight: 700;
+  font-weight: bold;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4862,7 +4868,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   border: 1px solid #dee2e6;
   color: #6c757d;
   background: #f8f9fa;
-  font-weight: 700;
+  font-weight: bold;
   border-radius: var(--border-radius);
   transition: box-shadow 0.2s;
 }
@@ -4984,7 +4990,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   color: var(--primary-active-color);
 }
 .p-steps .p-steps-item.p-highlight .p-steps-title {
-  font-weight: 700;
+  font-weight: bold;
   color: #495057;
 }
 .p-steps .p-steps-item:before {
@@ -5013,7 +5019,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   background: #ffffff;
   color: #6c757d;
   padding: 1.25rem;
-  font-weight: 700;
+  font-weight: bold;
   border-top-right-radius: var(--border-radius);
   border-top-left-radius: var(--border-radius);
   transition: box-shadow 0.2s;
@@ -5258,7 +5264,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   font-size: 2rem;
 }
 .p-toast .p-toast-message .p-toast-message-content .p-toast-summary {
-  font-weight: 700;
+  font-weight: bold;
 }
 .p-toast .p-toast-message .p-toast-message-content .p-toast-detail {
   margin: 0.5rem 0 0 0;
@@ -5489,7 +5495,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
   background:  var(--primary-color);
   color: #ffffff;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: bold;
   min-width: 1.5rem;
   height: 1.5rem;
   line-height: 1.5rem;
@@ -5616,32 +5622,36 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
 }
 
 .p-tag {
-  background:  var(--primary-color);
-  color: #ffffff;
-  font-size: 0.75rem;
-  font-weight: 700;
+  background:  var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
   padding: 0.25rem 0.4rem;
   border-radius: var(--border-radius);
 }
 .p-tag.p-tag-success {
-  background-color: var(--success-color);
-  color: #ffffff;
+  background-color: var(--tag-success-color);
+  color: var(--tag-success-text-color);
+
 }
 .p-tag.p-tag-info {
-  background-color:  var(--primary-color);
-  color: #ffffff;
+  background-color: var(--tag-info-color);
+  color: var(--tag-info-text-color);
 }
 .p-tag.p-tag-warning {
-  background-color: var(--warning-color);
-  color: #ffffff;
+  background-color: var(--tag-warning-color);
+  color: var(--tag-warning-text-color);
 }
 .p-tag.p-tag-danger {
-  background-color: var(--danger-color);
-  color: #ffffff;
+  background-color: var(--tag-danger-color);
+  color: var(--tag-danger-text-color);
 }
 .p-tag .p-tag-icon {
   margin-right: 0.25rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
+}
+.p-tag-icon, .p-tag-value, .p-tag-icon.pi {
+  line-height: 1 !important;
 }
 
 .p-terminal {
@@ -5656,7 +5666,7 @@ h1, h2, h3, h4, h5, h6, .text-bold, .button, .p-card-title {
 }
 
 .p-button-label {
-  font-weight: 700;
+  font-weight: bold;
   flex: none !important;
 }
 
