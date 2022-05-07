@@ -15,6 +15,7 @@
           <div class="field p-fluid">
             <InputText
               v-model="v$.username.$model"
+              @blur="v$.username.$touch"
               :class="{ 'p-invalid': v$.username.$error }"
               placeholder="ชื่อผู้ใช้งาน"
               autocomplete="off"
@@ -25,9 +26,11 @@
               </small>
             </div>
           </div>
+
           <div class="field p-fluid">
             <Password
               v-model="v$.password.$model"
+              @blur="v$.password.$touch"
               :class="{ 'p-invalid': v$.password.$error }"
               placeholder="รหัสผ่าน"
               :feedback="false"
@@ -42,14 +45,10 @@
 
           <div class="buttons p-fluid">
             <Button
-              :label="`${
-                wait.is('login') ? 'กำลังเข้าสู่ระบบ..' : 'เข้าสู่ระบบ'
-              }`"
+              :label="labelSubmit"
               @click="handleSubmit"
-              :disabled="v$.error"
               :loading="wait.is('login')"
             />
-            <!-- <Button label="ลืมรหัสผ่าน" ghost expanded /> -->
           </div>
         </div>
       </div>
@@ -60,7 +59,6 @@
 <script lang="ts" setup>
 import { required, helpers } from '@vuelidate/validators'
 import useVuelidate from '@vuelidate/core'
-import axios from 'axios'
 
 definePageMeta({
   layout: false,
@@ -77,17 +75,21 @@ const formState = reactive({
 const validations = {
   username: {
     required: helpers.withMessage('กรุณากรอกชื่อผู้ใช้งาน', required),
-    $autoDirty: true,
   },
   password: {
     required: helpers.withMessage('กรุณากรอกรหัสผ่าน', required),
-    $autoDirty: true,
   },
 }
 
 const v$ = useVuelidate(validations, formState)
 
-function handleSubmit() {
+const labelSubmit = computed(() => {
+  return wait.is('login') ? 'กำลังเข้าสู่ระบบ..' : 'เข้าสู่ระบบ'
+})
+
+async function handleSubmit() {
+  const isFormCorrect = await v$.value.$validate()
+  if (!isFormCorrect) return
   wait.start('login', auth.login)
 }
 </script>
