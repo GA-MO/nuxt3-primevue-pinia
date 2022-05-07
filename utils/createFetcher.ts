@@ -1,5 +1,4 @@
 import axios, { AxiosPromise, AxiosRequestConfig } from 'axios'
-import AlertProgrammatic from '../components/AlertProgrammatic'
 
 interface FetcherOptions {
   mock?: boolean
