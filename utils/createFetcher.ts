@@ -1,35 +1,49 @@
 import axios, { AxiosPromise, AxiosRequestConfig } from 'axios'
 
-interface FetcherOptions {
+interface FetcherOptions extends AxiosRequestConfig {
   mock?: boolean
   jsonMockup?: string
   delay?: number
 }
 
-const defaultOptions: AxiosRequestConfig & FetcherOptions = {
-  mock: false,
+const defaultOptions: FetcherOptions = {
+  mock: true,
   jsonMockup: '',
   delay: 0,
   timeout: 0,
 }
 
-function createFetcher(options = defaultOptions): AxiosPromise {
+const isDevelopment = process.env.NODE_ENV === 'development'
+
+const shouldUseMockup = (options: FetcherOptions) => {
+  if (!isDevelopment) return false
+  if (!options.mock) return false
+  if (options.jsonMockup === '') return false
+  return true
+}
+
+function createFetcher(options: FetcherOptions): AxiosPromise {
+  const fetchOptions: FetcherOptions = {
+    ...defaultOptions,
+    ...options,
+  }
+
   return new Promise((resolve, reject) => {
     async function callFetch() {
       try {
-        if (options.mock) {
-          const response = await axios.get(options.jsonMockup)
+        if (shouldUseMockup(fetchOptions)) {
+          const response = await axios.get(fetchOptions.jsonMockup)
+          resolve(response)
+        } else {
+          const response = await axios(fetchOptions)
           resolve(response)
         }
-
-        const response = await axios(options)
-        resolve(response)
       } catch (error) {
         reject(error)
       }
     }
 
-    setTimeout(() => callFetch(), options.delay * 1000)
+    setTimeout(() => callFetch(), fetchOptions.delay * 1000)
   })
 }
 

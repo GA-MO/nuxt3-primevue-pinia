@@ -2,20 +2,11 @@ import createFetcher from '../../utils/createFetcher'
 import { AxiosResponse } from 'axios'
 import { NewsItem } from './models'
 import { useNewsStore } from './store'
-
-const isMock: boolean = false
-const delay: number = 2
+import { fetchAllNews, fetchNewsError } from '../../api/news'
 
 async function getNews() {
   const newsStore = useNewsStore()
-  const fetchNews = createFetcher({
-    url: 'https://jsonplaceholder.typicode.com/posts',
-    jsonMockup: '/jsonMockup/news.json',
-    mock: isMock,
-    delay,
-  })
-
-  const response: AxiosResponse = await fetchNews
+  const response: AxiosResponse = await fetchAllNews()
 
   const newsList = response.data.map(
     (item: any): NewsItem => ({
@@ -30,12 +21,7 @@ async function getNews() {
 }
 
 async function getNewsError() {
-  const fetchNewsError = createFetcher({
-    url: 'https://jsonplaceholder.typicode.com/test',
-    delay,
-  })
-
-  await fetchNewsError
+  await fetchNewsError()
 }
 
 export default { getNews, getNewsError }
