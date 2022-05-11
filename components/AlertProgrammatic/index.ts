@@ -3,12 +3,6 @@ import { createVNode, render } from 'vue'
 
 import Alert from './Alert.vue'
 
-declare global {
-  interface Window {
-    $nuxt: any
-  }
-}
-
 interface AlertOptions {
   type: 'error' | 'warning' | 'success'
   title: String
@@ -17,8 +11,9 @@ interface AlertOptions {
 }
 
 function alertProgrammatic(options: AlertOptions): ComponentPublicInstance {
+  const nuxt = useNuxtApp()
   const vnode = createVNode(Alert, { ...options })
-  vnode.appContext = window.$nuxt._context
+  vnode.appContext = nuxt.vueApp._context
   render(vnode, document.createElement('div'))
   return vnode.component.proxy
 }
